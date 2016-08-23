@@ -1,0 +1,22 @@
+{
+  "presets": [
+    "react",
+    "stage-0",
+    "es2015"
+  ],
+  "plugins": [
+    "add-module-exports"
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        "react-hmre"
+      ]
+    },
+    "test": {
+      "plugins": [
+        ["webpack-loaders", { "config": "webpack.config.node.js", "verbose": false }]
+      ]
+    }
+  }
+}
