@@ -14,7 +14,7 @@ export default function (city) {
           country: listItem.sys.country,
           temp: listItem.main.temp,
           description: listItem.weather[0].main,
-          icon: listItem.weather[0].icon,
+          icon: listItem.weather[0].icon
         }
       })
     })

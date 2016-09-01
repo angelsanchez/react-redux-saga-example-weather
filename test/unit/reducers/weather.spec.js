@@ -2,7 +2,6 @@ import {expect} from 'chai'
 import weatherActions from '../../../src/actions/weather'
 import weatherReducer from '../../../src/reducers/weather'
 
-
 describe('reducers', () => {
   describe('weather', () => {
     it('should handle initial state', () => {

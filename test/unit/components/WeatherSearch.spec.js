@@ -3,8 +3,6 @@ import {spy} from 'sinon'
 import {expect} from 'chai'
 import {shallow} from 'enzyme'
 import WeatherSearch from '../../../src/components/WeatherSearch'
-import WeatherCard from '../../../src/components/WeatherCard'
-
 
 describe('components', () => {
   describe('<WeatherSearch />', () => {

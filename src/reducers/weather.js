@@ -40,7 +40,7 @@ function fetchWeatherError (state, {error}) {
   }
 }
 
-export default function counter (state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case weatherActionTypes.SET_SEARCH_TEXT:
       return setSearchText(state, action)

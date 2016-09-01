@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "lint": "standard src/",
+    "postinstall": "selenium-standalone install",
+    "lint": "standard",
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.pro.js",
     "build": "npm run clean && npm run build:webpack",
     "start": "NODE_ENV=production node server.js",
     "server:dev": "NODE_ENV=development node server.js",
-    "test": "BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --compilers js:babel-register --require test/unit/setup.js --recursive test/unit/**/*.spec.js",
-    "test:watch": "npm test -- --watch"
+    "test-unit": "BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha --compilers js:babel-register --require test/unit/setup.js --recursive test/unit/**/*.spec.js",
+    "test:watch": "npm test -- --watch",
+    "selenium-server": "selenium-standalone start",
+    "test-acceptance": "BABEL_DISABLE_CACHE=1 wdio wdio.conf.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,7 @@
     "copy-webpack-plugin": "3.0.1",
     "cross-env": "2.0.0",
     "css-loader": "0.23.1",
+    "cucumber": "1.2.2",
     "enzyme": "2.4.1",
     "express": "4.14.0",
     "extract-text-webpack-plugin": "1.0.1",
@@ -47,9 +51,13 @@
     "redux-devtools-dock-monitor": "1.1.1",
     "redux-devtools-log-monitor": "1.0.11",
     "rimraf": "2.5.4",
+    "selenium-standalone": "5.6.2",
     "sinon": "^1.17.5",
     "standard": "8.0.0-beta.5",
     "style-loader": "0.13.1",
+    "wdio-cucumber-framework": "0.2.4",
+    "wdio-spec-reporter": "0.0.3",
+    "webdriverio": "4.2.8",
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.12.2"
@@ -59,5 +67,13 @@
     "react-dom": "15.3.1",
     "react-redux": "4.4.5",
     "redux-saga": "0.11.0"
-  }
+  },
+  "standard": {
+    "globals": [
+      "browser", "it", "describe", "fetch"
+    ]
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }

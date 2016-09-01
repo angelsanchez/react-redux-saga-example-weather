@@ -18,16 +18,42 @@ npm run server:dev
 
 Open a browser and visit `http://localhost:3000`
 
-## Run tests
+## Run unit tests
 
 ```
-npm test
+npm run test-unit
 ```
 
 Run watching file changes:
 
 ```
 npm run test:watch
+```
+
+## Run acceptance tests
+
+Build the application:
+
+```
+npm run build
+```
+
+Start selenium server:
+
+```
+npm run selenium-server
+```
+
+Start server:
+
+```
+npm start
+```
+
+Execute tests:
+
+```
+npm run test-acceptance
 ```
 
 ## Production

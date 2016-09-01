@@ -13,7 +13,7 @@ describe('sagas', () => {
       const generator = watchFetchWeather()
 
       expect(generator.next().value).deep.equal(
-        takeEvery.apply(null, [weatherActionsTypes.FETCH_WEATHER, fetchWeather]).next().value
+        takeEvery(weatherActionsTypes.FETCH_WEATHER, fetchWeather).next().value
       )
     })
 

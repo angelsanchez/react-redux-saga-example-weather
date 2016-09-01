@@ -3,7 +3,6 @@ import {expect} from 'chai'
 import {shallow} from 'enzyme'
 import WeatherCard from '../../../src/components/WeatherCard'
 
-
 describe('components', () => {
   describe('<WeatherCard />', () => {
     it('should have the following structure', () => {
